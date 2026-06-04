@@ -2260,3 +2260,33 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+/* --- Mpangilio wa Maelezo na Picha (Nusu kwa Nusu) --- */
+.container-maelezo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Nafasi kati ya maandishi na picha */
+}
+
+.upande-wa-maandishi, 
+.mel-image-gallery {
+    flex: 1;
+    width: 50%; /* Kila upande unachukua nusu ya screen */
+}
+
+.mel-image-gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Inalazimisha picha ikae chini ya maandishi kwenye simu ili isibanane */
+@media (max-width: 768px) {
+    .container-maelezo {
+        flex-direction: column;
+    }
+    .upande-wa-maandishi, 
+    .mel-image-gallery {
+        width: 100%;
+    }
+}

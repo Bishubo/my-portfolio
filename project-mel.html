@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MEL Tools Showcase - Mosses C. Bishubo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		
+		<!-- Custom Styling for Full-Width Dropdowns -->
+		<style>
+			details.mel-project-accordion {
+				background: #f5f6f7;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				margin-bottom: 1.5em;
+				padding: 0.5em 1.5em;
+				transition: all 0.3s ease;
+			}
+			details.mel-project-accordion[open] {
+				background: #ffffff;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+			}
+			summary.mel-project-header {
+				font-family: "Roboto", Helvetica, sans-serif;
+				font-size: 1.3em;
+				font-weight: 700;
+				color: #3d4449;
+				padding: 1em 0;
+				cursor: pointer;
+				list-style: none; /* Removes default arrow */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			/* Custom arrow indicator */
+			summary.mel-project-header::after {
+				content: '\f078'; /* FontAwesome chevron-down */
+				font-family: 'Font Awesome 6 Free';
+				font-weight: 900;
+				font-size: 0.8em;
+				color: #f56a6a;
+				transition: transform 0.3s ease;
+			}
+			details[open] summary.mel-project-header::after {
+				transform: rotate(180deg);
+			}
+			/* Remove default arrow in Chrome/Safari */
+			summary::-webkit-details-marker {
+				display: none;
+			}
+			.mel-project-content {
+				padding: 1.5em 0;
+				border-top: 1px solid #e6e6e6;
+				width: 100%;
+			}
+			.mel-image-gallery {
+				width: 100%;
+				margin-top: 2em;
+			}
+			.mel-image-gallery img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				margin-bottom: 2em;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Bishubo</strong> , <i>Your data hero..!</i></a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/mosses-bishubo" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+										<li><a href="https://www.instagram.com/mosse.bi" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content Section -->
+								<section style="padding-top: 1.5em;">
+									<ul class="actions" style="margin-top: 0; margin-bottom: 1.5em;">
+										<li><a href="index.html" class="button small icon solid fa-arrow-left" style="text-transform: none;">Back to Portfolio</a></li>
+									</ul>
+									<header class="main">
+										<h1 style="font-size: 48px">MEL Tools & Systems Design</h1>
+									</header>
+
+									<hr class="major" />
+
+									<!-- PROJECT 1 -->
+									 	
+									<details class="mel-project-accordion">
+										<summary class="mel-project-header">Data Triangulation Tool - DTT</summary>
+										<div class="mel-project-content">
+											<ul class="actions">
+											<li><a href="https://drive.google.com/file/d/1qo66l15bmU6MSBeuJqSJX3hystu0M5uN/view?usp=drive_link" class="button icon solid fa-download" download style="text-transform: none;">Download Tool</a></li>
+										</ul>
+											<p>
+												<p style="text-align: justify;"><strong>Introduction</strong>
+													<br>In the field of data management, data integrity is the foundation of reliable reporting and evidence based decision making. However, when identical key performance indicators (KPI's) are tracked across multiple data sources, 
+													inconsistency can emerge due to differences in reporting timelines, data entry practices, system structures, or human error. 
+													<br>To address this challenge, I designed a comprehensive Excel DTT that systematically compares and reconciles KPI's across three critical data sources: <b>DHIS2, CTC database and Monthly report</b>. 
+													Thus the tool included <i>selection of assesment period, number of dicrepancies (issues) identified, and conditional formatting to highlight mismatches</i>, making it easy for users to quickly see where data did not align and needed attention.
+													<br>Rather than treating the issue as a data collection problem, I recognized it as a data alignment problem. The goal was not simply to gather more data, but to ensure that all reporting systems were telling the same story.
+													The tool enabled data teams to quickly identify discrepancies, investigate their causes, and improve the consistency and reliability of reported results.
+														
+												</p>
+														<div class="mel-image-gallery">
+															<img src="images/DTT_01.png" alt="Data Triangulation Setup View" />
+														</div>
+												<div class="container-maelezo">
+    												<div class="upande-wa-maandishi">
+       													<strong style="display: block; margin-bottom: 10px;">The Challenge</strong>
+        
+        												<p style="text-align: justify; margin-bottom: 15px;">
+															Each month, project teams were required to monitor performance and prepare reports for program management and stakeholders. 
+															Producing high-quality reports depended on having data that was accurate, timely, and consistent across all reporting platforms.
+															However, data originated from multiple systems, each with its own workflow and potential sources of error.
+															<br>Because these systems relied on different users, reporting schedules, and data entry processes, differences between reported figures frequently occurred. As a result, 
+															significant time was spent determining which numbers were correct instead of analyzing performance and program outcomes.
+        												</p>
+        
+       													 <p style="text-align: justify;">
+            												Because these systems relied on different users, reporting schedules, and data entry processes, differences between reported figures frequently occurred. As a result, 
+															significant time was spent determining which numbers were correct instead of analyzing performance and program outcomes.
+        												</p>
+   													</div>
+    
+  													  <div class="mel-image-gallery">
+  													      <img src="images/DTT_02.png" alt="Data Triangulation Setup View" />
+   														</div>
+													</div>
+												
+												</p>
+												<div class="container-maelezo">
+													<div class="upande-wa-maandishi">
+														
+														<p style="text-align: justify;">
+																Sometimes aggregated data may appear clean and consistent, while underlying discrepancies remain hidden at lower levels. 
+																For example, in the figure on the right, the HTS_POS indicator for Council 01 shows no discrepancy.
+															<br>However, when the data is examined at the facility level, several discrepancies become apparent. These inconsistencies are masked in the aggregated totals because differences at individual facilities offset each other.
+															<br>To address this challenge, I introduced a <strong><i>Number of Issues</i></strong> row above each indicator. This feature helps identify hidden discrepancies that may not be visible in aggregated results. 
+																For example, the SNS_POS indicator shows 0, indicating that the data is fully consistent across all sources.
+														</p> 
+													</div>
+													<div class="mel-image-gallery">
+														<img src="images/DTT_03.png" alt="Data Triangulation Setup View" />
+													</div>
+												</div>
+												
+												<p>
+													<strong>Building the Solution</strong>
+													<br>To address this challenge, I designed a centralized Excel Data Triangulation Tool capable of comparing data from all three reporting sources in a single environment. The development process included:</br>
+
+													<ul>
+															<li>Mapping the complete data flow to understand how information moved between systems.</li>
+															<li>Creating standardized data entry sheets for DHIS2, CTC2, and Excel reporting templates.</li>
+															<li>Developing a master comparison dashboard that automatically consolidated data from all three sources.</li>
+															<li>Using Excel functions such as INDEX-MATCH, SUMIF, IFERROR and conditional formatting to automate data matching and validation.</li>
+															<li>Applying conditional formatting to instantly highlight discrepancies requiring investigation.</li>
+															<li>Building a user-friendly selection panel that allowed users to perform triangulation by reporting period.</li>
+													</ul>
+
+													The result was a simple yet powerful tool that transformed a complex manual review process into a structured and automated workflow.
+												</p>
+												<p>
+													<strong>Results and Impact</strong>
+													<br>The tool delivered several important benefits:</br>
+													<ul>
+														<li><strong>Reduced Time Spent on Data Reconciliation:</strong>
+														Manual comparison of reports across systems was significantly reduced. Staff could immediately identify mismatched indicators and focus their efforts on verification and corrective actions.
+
+														<li><strong>Improved Data Quality:</strong>
+														By systematically comparing data across multiple reporting platforms, the tool helped identify reporting errors, missing entries, and inconsistencies before reports were finalized. This led to more accurate and reliable reporting.
+
+														<li><strong>Strengthened Data Ownership:</strong>
+														The tool was designed such that data was populated and shared the checks to facility staffs to check there data quality perfomance. As a result, data quality checks became part of the routine reporting process while working collaboratively. 
+														This encouraged greater accountability and ownership of reported data.
+
+														<li><strong>Wider Adoption:</strong>
+														As staff became familiar with the tool and experienced its benefits, its use expanded beyond the initial implementation sites. Council 01 successfully integrated the tool into its reporting processes, 
+														resulting in more timely, accurate, and consistent reporting. The approach was subsequently adopted by other 6 councils, extending its impact across the region.
+													</ul>
+												</p>
+												<p><strong>Key Takeaway</strong>
+													<br>This project demonstrated how a simple, well-designed solution can solve a complex operational challenge. By bringing together data from multiple reporting systems and automating the comparison process, 
+													the Excel Data Triangulation Tool improved reporting efficiency, strengthened data quality, and enabled teams to spend less time validating numbers and more time using data to drive program improvement.
+												</p>
+											</p>
+										</div>
+									</details>
+
+									<!-- PROJECT 2 -->
+									<details class="mel-project-accordion">
+										<summary class="mel-project-header">2. KoboCollect Tool Design (Survey Design Baseline & Endline)</summary>
+										<div class="mel-project-content">
+											<p style="text-align: justify;">Custom form architectures engineered for accurate field deployment. Features complex skip logic, built-in validation constraints to prevent errors at the point of entry, and optimized field mappings for seamless XLSForm compilation.</p>
+											
+											<ul class="actions">
+												<li><a href="downloads/Baseline_Survey_Form.xlsx" class="button icon solid fa-download" download style="text-transform: none;">Download XLSForm Template</a></li>
+											</ul>
+
+											<!-- Full Width Images Space -->
+											<div class="mel-image-gallery">
+												<img src="images/mel-kobo-1.png" alt="Kobo Architecture View" />
+												<img src="images/mel-kobo-2.png" alt="Kobo Form Preview" />
+											</div>
+										</div>
+									</details>
+
+									<!-- PROJECT 3 -->
+									<details class="mel-project-accordion">
+										<summary class="mel-project-header">3. Weekly KPI Monitoring Tool</summary>
+										<div class="mel-project-content">
+											<p style="text-align: justify;">An automated performance tracking hub designed to capture high-frequency indicators. It translates granular team outputs into high-level weekly trends, giving management a reliable visual pulse on operational health.</p>
+											
+											<ul class="actions">
+												<li><a href="downloads/Weekly_KPI_Dashboard.xlsx" class="button icon solid fa-download" download style="text-transform: none;">Download KPI Tracker</a></li>
+											</ul>
+
+											<!-- Full Width Images Space -->
+											<div class="mel-image-gallery">
+												<img src="images/mel-kpi-1.png" alt="Weekly Tracker Form" />
+												<img src="images/mel-kpi-2.png" alt="Weekly Progress Chart" />
+											</div>
+										</div>
+									</details>
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright" style="text-transform: none;">&copy; Mosses Bishubo</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
