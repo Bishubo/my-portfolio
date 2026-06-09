@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>QGIS Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		
+		<!-- Custom Styling for Full-Width Dropdowns -->
+		<style>
+			details.mel-project-accordion {
+				background: #f5f6f7;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				margin-bottom: 1.5em;
+				padding: 0.5em 1.5em;
+				transition: all 0.3s ease;
+			}
+			details.mel-project-accordion[open] {
+				background: #ffffff;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+			}
+			summary.mel-project-header {
+				font-family: "Roboto", Helvetica, sans-serif;
+				font-size: 1.3em;
+				font-weight: 700;
+				color: #3d4449;
+				padding: 1em 0;
+				cursor: pointer;
+				list-style: none; /* Removes default arrow */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			/* Custom arrow indicator */
+			summary.mel-project-header::after {
+				content: '\f078'; /* FontAwesome chevron-down */
+				font-family: 'Font Awesome 6 Free';
+				font-weight: 900;
+				font-size: 0.8em;
+				color: #f56a6a;
+				transition: transform 0.3s ease;
+			}
+			details[open] summary.mel-project-header::after {
+				transform: rotate(180deg);
+			}
+			/* Remove default arrow in Chrome/Safari */
+			summary::-webkit-details-marker {
+				display: none;
+			}
+			.mel-project-content {
+				padding: 1.5em 0;
+				border-top: 1px solid #e6e6e6;
+				width: 100%;
+			}
+			.mel-image-gallery {
+				width: 100%;
+				margin-top: 2em;
+			}
+			.mel-image-gallery img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				margin-bottom: 2em;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Bishubo</strong> , <i>Your data hero..!</i></a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/mosses-bishubo" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+										<li><a href="https://www.instagram.com/mosse.bi" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content Section -->
+								<section style="padding-top: 1.5em;">
+									<ul class="actions" style="margin-top: 0; margin-bottom: 1.5em;">
+										<li><a href="index.html" class="button small icon solid fa-arrow-left" style="text-transform: none;">Back to Portfolio</a></li>
+									</ul>
+									<header class="main">
+										<h1 style="font-size: 48px">Geospacial Analysis using QGIS Tools</h1>
+									</header>
+
+									<hr class="major" />
+
+									<!-- PROJECT 1 -->
+									 	
+									<details class="mel-project-accordion">
+										<summary class="mel-project-header">Polygon Validation survey</summary>
+										<div class="mel-project-content">
+											<ul class="actions">
+											<li><a href="https://drive.google.com/file/d/1rLQtdrx6BiVS5Oc-TEC9feW_gMS_AbKi/view?usp=drive_link" class="button icon solid fa-download" download style="text-transform: none;">Download Files</a></li>
+										</ul>
+											<p>
+												<p style="text-align: justify;"><strong>Introduction</strong>
+													<br>This project was designed to validate and map farmer planting areas using a complete geospatial data collection and analysis workflow. Starting from scratch, <b>field data were collected using KoboCollect</b>, where polygon boundaries of farmers' plots were captured alongside their geographic locations.
+													<br>The primary objective was to verify the actual areas where seedlings had been planted under three planting systems: <i>Cash Crop and Fodder Systems</i>, <i>Mixed Woodlots</i>, and <i>Fruit Trees</i>. Using QGIS, the collected polygon data were processed, validated, and analyzed to ensure spatial accuracy and data quality.
+													<br>The project aimed at the calculation of plot sizes for individual farmers and planting systems, to attain reliable information on the total area covered by each intervention. The final outputs supported project monitoring, reporting, and decision-making by delivering accurate spatial data on seedling distribution and land utilization. Here is a step by step overview of the process and results:	
+												</p>
+
+												<div class="container-maelezo">
+    												<div class="upande-wa-maandishi">
+       													<strong style="display: block; margin-bottom: 10px;">Step by Step process:</strong>
+        
+        												<p style="text-align: justify; margin-bottom: 15px;">
+															<b>Step 1:</b> Design of data collection tool and training of data collectors: 
+															<br>A KoboCollect form was created to capture polygon boundaries and relevant attributes for each farmer's plot. Data collectors were trained on how to use the tool effectively in the field (The designed tool named <i><b>#01. KoboCollect_Polygon_Validation_Tool</b></i> is attached in dowloded folder).
+
+        												</p>
+        
+       													 <p style="text-align: justify;">
+															<b>Step 2:</b> Field data collection:
+															<br>The tool was then uploaded in KoboCollect, then dowloaded by each data collector on the data collection tablet/smart phone. Data collectors went to the field to capture the polygon boundaries of farmers' plots Each polygon represented a specific planting area, and its geographic location was recorded for spatial analysis.
+        												</p>
+       													 <p style="text-align: justify;">
+															<b>Step 3:</b> Data Extraction from Kobo and data cleaning using power Query
+															<br> The data was imported in excel, then <b><i>used the power query</i></b> to clean and manipulate the data to a simple smart format that which usifull for further analysis.
+   													</div>
+    
+  													  <div class="mel-image-gallery">
+  													      <img src="images/KoboCollect_01.jpeg" alt="Data Triangulation Setup View" />
+   														</div>
+													</div>
+												</p>
+
+												<div class="mel-image-gallery">
+  													<img src="images/QGIS_02.png" alt="Data Triangulation Setup View" />
+   												</div>
+												
+												<p style="text-align: justify;">
+													<strong>Step 4: Import data in QGIS</strong>
+													<br>To import the data into QGIS, the Excel dataset is first converted into a <strong>Comma-Separated Values (CSV)</strong> format. After importing the coordinates, the collected points are transformed into polygons using two processing tools: <strong>Points to Path</strong> and <strong>Lines to Polygons</strong>.
+													 	Once the polygons are created, the <strong>Join Attributes</strong> feature is used to transfer all relevant information from the original point layer to the newly generated polygon layer. This process preserves the associated farmer and planting data, making it possible to classify and analyze plots according to the different planting systems: <i>Cash Crop and Fodder Systems, Mixed Woodlots,</i> and <i>Fruit Trees</i>.
+												</p>	
+												<p style="text-align: justify;">
+													<strong>Step 5: Data cleaning and verification in QGIS</strong>
+													<br>After generating the polygon layer, each feature is carefully reviewed to identify any data quality issues. This involves examining polygon shapes, boundaries, overlaps, gaps, and attribute inconsistencies to determine whether corrective action is required. 
+														Based on the assessment, identified issues are categorized into two groups: those that can be resolved through <strong>GIS editing and data cleaning</strong> within QGIS, and those that require <strong>field verification</strong> to confirm the actual plot boundaries, locations, or planting information before corrections can be made.
+
+													<div class="mel-image-gallery">
+  														<img src="images/QGIS_03.png" alt="Data Triangulation Setup View" />
+   													</div>
+												</p>
+
+												<p style="text-align: justify;">
+													<strong>Step 06: Calculate Area</strong>
+													<br>Once all polygons have been reviewed and cleaned, QGIS is used to calculate the area of each plot accurately. The resulting area measurements are stored within the polygon attribute table, enabling analysis at both the farmer and planting-system levels.
+														For further summarization and reporting, the attribute table is exported to Excel, where additional analyses, aggregations, and visualizations can be performed to generate project-level statistics and insights.
+													<div class="mel-image-gallery">
+  														<img src="images/QGIS_04.png" alt="Data Triangulation Setup View" />
+   													</div>
+												</p>
+												<p style="text-align: justify;">
+													<strong>Step 07: Map Layout and printing</strong>
+													<br>The final validated data is transformed into a professional map layout for reporting and presentation purposes. Using QGIS Layout Manager, all essential cartographic elements are incorporated, including a map title, legend (key), scale bar, north arrow (compass direction), coordinate grid where required, and other relevant annotations. 
+														The completed map is then exported in high-quality formats such as PDF or image files, making it suitable for printing, reporting, stakeholder presentations, and project documentation.
+													<div class="mel-image-gallery">
+  														<img src="images/QGIS_05.png" alt="Data Triangulation Setup View" />
+   													</div>
+												</p>
+
+												<p style="text-align: justify;">
+													<strong>Key Takeaway</strong>
+													<br>This project demonstrates my ability to manage an end-to-end geospatial data workflow, from designing digital data collection tools and training field teams to performing spatial analysis and data quality assurance. 
+													By integrating KoboCollect, Power Query, Excel, and QGIS, I transformed raw field coordinates into validated polygon maps and reliable area estimates for multiple planting systems. The project provided accurate evidence on seedling distribution and land utilization, 
+													enabling informed decision-making, effective project monitoring, and credible reporting. It highlights my expertise in GIS, spatial data validation, data cleaning, geospatial analysis, and the translation of complex field data into actionable insights.
+
+												</p>
+											</p>
+										</div>
+									</details>
+
+	
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright" style="text-transform: none;">&copy; Mosses Bishubo</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
