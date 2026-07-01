@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MEL Tools Showcase - Mosses C. Bishubo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		
+		<!-- Custom Styling for Full-Width Dropdowns -->
+		<style>
+			details.mel-project-accordion {
+				background: #f5f6f7;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				margin-bottom: 1.5em;
+				padding: 0.5em 1.5em;
+				transition: all 0.3s ease;
+			}
+			details.mel-project-accordion[open] {
+				background: #ffffff;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+			}
+			summary.mel-project-header {
+				font-family: "Roboto", Helvetica, sans-serif;
+				font-size: 1.3em;
+				font-weight: 700;
+				color: #3d4449;
+				padding: 1em 0;
+				cursor: pointer;
+				list-style: none; /* Removes default arrow */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			/* Custom arrow indicator */
+			summary.mel-project-header::after {
+				content: '\f078'; /* FontAwesome chevron-down */
+				font-family: 'Font Awesome 6 Free';
+				font-weight: 900;
+				font-size: 0.8em;
+				color: #f56a6a;
+				transition: transform 0.3s ease;
+			}
+			details[open] summary.mel-project-header::after {
+				transform: rotate(180deg);
+			}
+			/* Remove default arrow in Chrome/Safari */
+			summary::-webkit-details-marker {
+				display: none;
+			}
+			.mel-project-content {
+				padding: 1.5em 0;
+				border-top: 1px solid #e6e6e6;
+				width: 100%;
+			}
+			.mel-image-gallery {
+				width: 100%;
+				margin-top: 2em;
+			}
+			.mel-image-gallery img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+				margin-bottom: 2em;
+				border: 1px solid #e6e6e6;
+				border-radius: 4px;
+				display: block;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Bishubo</strong> , <i>Your data hero..!</i></a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/mosses-bishubo" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+										<li><a href="https://www.instagram.com/mosse.bi" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content Section -->
+								<section style="padding-top: 1.5em;">
+									<ul class="actions" style="margin-top: 0; margin-bottom: 1.5em;">
+										<li><a href="index.html" class="button small icon solid fa-arrow-left" style="text-transform: none;">Back to Portfolio</a></li>
+									</ul>
+									<header class="main">
+										<h1 style="font-size: 48px">Power BI Project</h1>
+									</header>
+
+									<hr class="major" />
+
+
+									<!-- PROJECT 1 -->
+									 	
+									<details class="mel-project-accordion">
+										<summary class="mel-project-header">Olist E-Commerce Analysis</summary>
+										<div class="mel-project-content">
+											<ul class="actions">
+											<li><a href="https://drive.google.com/file/d/12AoDTbGGKlC0OjMSmFrJgcNqT7LODikR/view?usp=drive_link" class="button icon solid fa-download" download style="text-transform: none;">Download Power BI Report</a></li>
+											<li><a href="#" target="_blank" class="button alt icon solid fa-external-link-alt" style="text-transform: none;">View Live Power BI Dashboard</a></li>
+											<li><a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" class="button alt icon solid fa-external-link-alt" style="text-transform: none;">Dataset Source</a></li>
+										</ul>
+											<p>
+												<p style="text-align: justify;"><strong>Introduction</strong>
+													<br>This project is an end-to-end Power BI dashboard built using the Brazilian E-commerce public dataset by Olist. I cleaned and transformed the data, designed a star schema data model, and created DAX measures and KPIs to analyze sales, customer behavior, product and delivery performance.
+													The dashboard includes interactive features such as slicers, filters, drills, making it easy for users to explore the data evaluate store performance, identify opportunities for improvement, and enhance overall customer satisfaction.	
+												</p>
+												<p style="text-align: justify;"><strong>Data Analysis Goals</strong>
+													<br>1. Analyse product, sales and revenue performance over time.
+													<br>2. Analyze product delivery performances.
+													<br>3. Analyze customer satisfaction ratings to uncover opportunities and improve customer satisfaction.
+													
+												</p>
+												<p style="text-align: justify;"><strong>About Dataset:</strong>
+													The dataset contains approximately 100,000 orders from 2023 - 2025 (Original dataset have 2016 to 2018) made at Brazilian e-commerce platform. 
+													The database contains 9 tables with information about orders, products, customers, sellers, payments, reviews and geolocation. The dataset is available on Kaggle at <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">This link</a>.
+												</p>
+												<p style="text-align: justify;"><strong>Tools Used:</strong>
+													Power BI
+												</p>
+												<p style="text-align: justify;"><strong>Data Cleaning</strong>
+													<br> After importing the dataset into Power BI, I performed data cleaning and transformation using Power Query Editor. By promoting headers to some table which were not automatically detected by Power BI.
+														Changes data type to appropriate types, removing corrupted or irrelevant data and replacing jargons with proper names.
+												</p>
+												
+												<div class="mel-image-gallery">
+													<img src="images/pbi_01.png" alt="Power BI Interface" />
+												</div>
+
+       											<strong style="display: block; margin-bottom: 10px;">Key Findings</strong>
+													<b>1. Revenue Perfomance</b>
+														<ul>
+															<li>Total Revenue; 16,008,872.00 BRL
+															<li>Consistent growth in revenue over time, with a peak revenue in Nov 2024.
+														</ul>
+													<b>2. Delivery Performance</b>
+														<ul>
+															<li>Total Deliveries 96,478 with about 625 canceled oders 
+															<li>12.5 average delivery days
+															<li>6,535 orders delivered late, with a rate of 6.7% of total orders, indicating a need for improved logistics and delivery management.
+															<li>About 41 orders were delivered after 50 days, which is a significant delay and may lead to customer dissatisfaction.
+														</ul>
+													<b>3. Customer Satisfaction</b>
+														<ul>
+															<li>A total of 99,224 reviews were collected
+															<li> 57,328 (58%) gave a 5-star rating, indicating a high level of customer satisfaction
+															<li> 11,424 (12%) gave a 1-star rating, indicating areas for improvement in product quality or service.
+															<li> Average review score of 4.09 out of 5, indicating a generally positive customer experience.
+															<li> The review score dcreases and the product delivery time increases, indicating that customers are more likely to leave negative reviews when their orders are delayed.
+														</ul>
+													<b>4. Product Performance</b>
+														<ul>
+															<li>Top 5 products by revenue include CDs and DVDs, Fashion chirdren's clothing, Books and Construction tools are the most popular product categories, indicating a diverse range of products offered by the e-commerce platform.
+															<li>The least popular product category are security services with a rating of 2.5 out of 5.
+														</ul>
+														<div class="mel-image-gallery">
+															<img src="images/pbi_02.png" alt="Power BI Interface" />
+														</div>
+														<div class="mel-image-gallery">
+															<img src="images/pbi_03.png" alt="Power BI Interface" />
+														</div>
+
+       											<strong>Recomendations</strong>
+													<ul>
+														<li>Priotize the delivery of orders to ensure timely delivery and improve customer satisfaction.
+														<li>Analyze top-selling and high-demand products to identify growth opportunities and learn from the best practices and replicate the strategies of successful sellers.
+														<li>Analyze delivery delays and undelivered orders to uncover geographic factors affecting freight costs and delivery performance.
+														<li>Analyze cancelled orders and unavailable products to identify fulfillment issues and opportunities to improve customer satisfaction.
+													</ul>
+				
+												<p style="text-align: justify;"><strong>Summary</strong>
+													<br>Generally, Olist can improve its delivery and supply chain performance by continuously monitoring customer reviews, tracking delivery operations in real time, and strengthening shipment tracking and customer communication. 
+													These improvements can help reduce delivery issues, enhance operational efficiency, and increase overall customer satisfaction.
+													
+												</p>
+											</p>
+										</div>
+									</details>
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright" style="text-transform: none;">&copy; Mosses Bishubo</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
