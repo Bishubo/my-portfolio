@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+		
 		
 		<!-- Custom Styling for Full-Width Dropdowns -->
 		<style>
@@ -111,8 +113,7 @@
 										<summary class="mel-project-header">Olist E-Commerce Analysis</summary>
 										<div class="mel-project-content">
 											<ul class="actions">
-											<li><a href="https://drive.google.com/file/d/12AoDTbGGKlC0OjMSmFrJgcNqT7LODikR/view?usp=drive_link" class="button icon solid fa-download" download style="text-transform: none;">Download Power BI Report</a></li>
-											<li><a href="#" target="_blank" class="button alt icon solid fa-external-link-alt" style="text-transform: none;">View Live Power BI Dashboard</a></li>
+											<li><a href="https://drive.google.com/file/d/1HOao2D1iv5YIG6M16IoApzSksglULCTv/view?usp=drive_link" class="button icon solid fa-download" download style="text-transform: none;">Download Power BI Report</a></li>
 											<li><a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" class="button alt icon solid fa-external-link-alt" style="text-transform: none;">Dataset Source</a></li>
 										</ul>
 											<p>
@@ -134,8 +135,45 @@
 													Power BI
 												</p>
 												<p style="text-align: justify;"><strong>Data Cleaning</strong>
-													<br> After importing the dataset into Power BI, I performed data cleaning and transformation using Power Query Editor. By promoting headers to some table which were not automatically detected by Power BI.
+													<br> After importing the dataset into Power BI, I performed data cleaning and transformation using <b>Power Query Editor</b>. By promoting headers to some table which were not automatically detected by Power BI.
 														Changes data type to appropriate types, removing corrupted or irrelevant data and replacing jargons with proper names.
+												</p>
+												<p style="text-align: justify;"><strong>Data Modeling</strong>
+													<br>I designed a <b>Snowflake Schema data model</b> to organize the data in a clear and efficient way. The main transaction tables, <i><b>orders and order_items</b></i>, are connected to related tables like customers, products, sellers, payments, reviews, and dates. 
+													This structure keeps the data well organized, reduces duplication, and makes it easier to analyze trends, create DAX measures, and build interactive Power BI dashboards.
+												</p>
+												<div class="mel-image-gallery">
+													<img src="images/pbi_04.png" alt="Power BI Interface" />
+												</div>
+												<p style="text-align: justify;"><strong>DAX Formulas and Measures</strong>
+													<br> I created several <b>Measures, Caluculated columns</b> and added a <b>calendar Table</b> to analyze the data effectively. These include calculations for total revenue, average order value, costomer reviews, and delivery performance metrics here below are some of it.
+<pre><code class="language-dax">
+//MEASURES:
+1. Total Revenue = SUM(order_payments[payment_value])
+2. Total Orders = DISTINCTCOUNT(order_items[order_id])
+3. Total Product Reviews = COUNTA(order_reviews[review_score])
+4. Late Delivery Rate = DIVIDE([Late Orders Count], [Total Orders], 0)
+5. Late Orders Count = CALCULATE([Total Orders], orders[order_delivered_customer_date] > orders[order_estimated_delivery_date])
+6. Total Product Reviews = COUNTA(order_reviews[review_score])
+7. 5 Star Reviews = CALCULATE([Total Product Reviews], order_reviews[review_score] = 5)
+8. Average Review Score = AVERAGE(order_reviews[review_score])
+9. Avg Delivery Delay Days = AVERAGEX(FILTER(orders, NOT(ISBLANK(orders[order_delivered_customer_date]))),
+			DATEDIFF(orders[order_estimated_delivery_date], orders[order_delivered_customer_date], DAY))
+10. Review % = DIVIDE(COUNT(order_reviews[review_score]), CALCULATE(COUNT(order_reviews[review_score]), ALLSELECTED(order_reviews)))
+
+//CALCULATED TABLE/COLUMNS:
+1. No. of days Estimated = IF( orders[order_status] = "delivered", DATEDIFF(orders[order_purchase_timestamp],orders[order_estimated_delivery_date],DAY),BLANK())
+2. No. of days Delivered = IF(orders[order_status] = "delivered", DATEDIFF(orders[order_purchase_timestamp],orders[order_delivered_customer_date],DAY),BLANK())
+3. Delivery Days Difference = orders[No. of days Estimated] - orders[No. of days Delivered]
+4. Date_Table = CALENDAR(DATE(2023,09,01),DATE(2025,10,31)) //created a date table to use in the dashboard
+5. Year = YEAR(Date_Table[Date])
+6. Month = MONTH(Date_Table[Date])
+7. Month Name = FORMAT(Date_Table[Date],"MMM")
+8. Month Year = FORMAT(Date_Table[Date],"MMM YYYY")
+9. Quarter = "Q"&FORMAT(Date_Table[Date],"Q")
+10. DayName = FORMAT(Date_Table[Date],"dddd")
+
+</code></pre>
 												</p>
 												
 												<div class="mel-image-gallery">
@@ -207,6 +245,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dax.min.js"></script>
 
 	</body>
 </html>

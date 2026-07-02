@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
 		
 		<!-- Custom Styling for Full-Width Dropdowns -->
 		<style>
@@ -147,12 +148,41 @@
 												<div class="mel-image-gallery">
   													<img src="images/QGIS_02.png" alt="Data Triangulation Setup View" />
    												</div>
-												
+<pre><code class="language-powerquery">
+let
+    // 1. Get raw data source
+    Source = Excel.CurrentWorkbook(){[Name="Table1"]}[Content],
+
+    // 2. Extract only the core fields and target Corner columns
+    CoreFields = {"A3a: What is the village name?", "A3b: What is the Hamlet name?", "A3c: Name of the group", "B5: What is the Name of the beneficiary"},
+    CornerCols = List.Select(Table.ColumnNames(Source), each Text.Contains(_, ": Corner ") and not Text.Contains(_, "_")),
+
+    // 3. Keep only the necessary columns and add a clean row Index
+    FilteredTable = Table.SelectColumns(Source, List.Combine({CoreFields, CornerCols}), MissingField.Ignore),
+    AddIndex = Table.AddIndexColumn(FilteredTable, "Index", 1, 1, Int64.Type),
+
+    // 4. Unpivot only selected columns into rows
+    Unpivoted = Table.Unpivot(AddIndex, CornerCols, "Attribute", "Value"),
+
+    // 5. Add System and System_id tracking columns
+    AddSystem = Table.AddColumn(Unpivoted, "System", each if Text.Contains([Attribute], "S1") then "Cash crop and Fodder"else if Text.Contains([Attribute], "S2") then "Fruit Tree" else "Mixed Woodlots", type text),
+    AddSystemID = Table.AddColumn(AddSystem, "System_id", each Text.From([Index]) & "_" & [System], type text),
+
+    // 6. Split Kobo space-delimited coordinates directly into structured numeric fields
+    SplitGeo = Table.SplitColumn(AddSystemID, "Value", Splitter.SplitTextByDelimiter(" ", QuoteStyle.Csv), {"Latitude", "Longitude", "Altitude", "Precision"}),
+    SetGeoTypes = Table.TransformColumnTypes(SplitGeo, {{"Latitude", type number}, {"Longitude", type number}, {"Altitude", type number}, {"Precision", type number}}),
+
+    // 7. Select and rename final columns for the output layout
+    FinalColumns = Table.SelectColumns(SetGeoTypes, {"A3a: What is the village name?", "A3b: What is the Hamlet name?", "A3c: Name of the group", "B5: What is the Name of the beneficiary", "Index", "System", "System_id", "Attribute", "Latitude", "Longitude", "Altitude", "Precision"}),
+    Renamed = Table.RenameColumns(FinalColumns, {{"A3a: What is the village name?", "Village"}, {"A3b: What is the Hamlet name?", "Hamlet"}, {"A3c: Name of the group", "Group"}, {"B5: What is the Name of the beneficiary", "Farmers"}})
+in
+    Renamed
+</code></pre>	
 												<p style="text-align: justify;">
 													<strong>Step 4: Import data in QGIS</strong>
 													<br>To import the data into QGIS, the Excel dataset is first converted into a <strong>Comma-Separated Values (CSV)</strong> format. After importing the coordinates, the collected points are transformed into polygons using two processing tools: <strong>Points to Path</strong> and <strong>Lines to Polygons</strong>.
 													 	Once the polygons are created, the <strong>Join Attributes</strong> feature is used to transfer all relevant information from the original point layer to the newly generated polygon layer. This process preserves the associated farmer and planting data, making it possible to classify and analyze plots according to the different planting systems: <i>Cash Crop and Fodder Systems, Mixed Woodlots,</i> and <i>Fruit Trees</i>.
-												</p>	
+												</p>
 												<p style="text-align: justify;">
 													<strong>Step 5: Data cleaning and verification in QGIS</strong>
 													<br>After generating the polygon layer, each feature is carefully reviewed to identify any data quality issues. This involves examining polygon shapes, boundaries, overlaps, gaps, and attribute inconsistencies to determine whether corrective action is required. 
@@ -208,6 +238,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powerquery.min.js"></script>
 	</body>
 </html>
